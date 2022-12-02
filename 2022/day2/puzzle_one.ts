@@ -12,13 +12,13 @@ enum RoundScore {
   Win = 6
 };
 
-const strategyMap: { [x: string]: number } = {
+const shapeScoreMap: { [x: string]: number } = {
   X: ShapeScore.Rock,
   Y: ShapeScore.Paper,
   Z: ShapeScore.Scissor
 }
 
-const opponentStrategyMap: { [x: string]: number } = {
+const opponentShapeScoreMap: { [x: string]: number } = {
   A: ShapeScore.Rock,
   B: ShapeScore.Paper,
   C: ShapeScore.Scissor,
@@ -34,8 +34,8 @@ const fileContents = readFileSync('input.txt', 'utf-8');
 let totalScore = 0;
 fileContents.split('\r\n').forEach(pair => {
   const playedShapes = pair.split(' ');
-  const opponentShapeScore = opponentStrategyMap[playedShapes[0]];
-  const shapeScore = strategyMap[playedShapes[1]];
+  const opponentShapeScore = opponentShapeScoreMap[playedShapes[0]];
+  const shapeScore = shapeScoreMap[playedShapes[1]];
 
   totalScore += shapeScore;
   if (opponentShapeScore === shapeScore) {
