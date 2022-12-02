@@ -1,6 +1,6 @@
 import { readFileSync } from "fs";
 
-const fileContents: string = readFileSync('input_one.txt', 'utf-8');
+const fileContents: string = readFileSync('input.txt', 'utf-8');
 const elvesCalories = fileContents.split('\r\n\r\n');
 
 const maxSummedCalories = elvesCalories
