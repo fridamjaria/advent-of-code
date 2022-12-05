@@ -9,7 +9,7 @@ const getRangeArray = (rangeString: string): number[] => {
 }
 
 const rangesOverlap = (array1: number[], array2: number[]): boolean =>
-  array1.filter(item => array2.includes(item)).length > 0;
+  array1.some(item => array2.includes(item));
 
 let count = 0;
 lines.forEach(line => {
